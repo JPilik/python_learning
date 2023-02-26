@@ -11,3 +11,12 @@ And get python and install it
 
 once those are done update pip to the latest version
 * python.exe -m pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org --upgrade pip
+
+Usefull commands
+py <script>.py -> run the said script in windows
+pytest <script>_test.py -> run the unit tests associated with your scipt
+pylint <script>.py or <script>_test.py -> run linter against script or test script to ensure proper formatting/annotations
+
+within the content folder run the following
+py -m pydoc -b -> Should pop open a web browser with a huge amount of documentation to include what was added in by your code.
+
