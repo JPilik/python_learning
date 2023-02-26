@@ -2,7 +2,8 @@
 
 def helloworld():
     '''hello world method in python'''
-    print("Hello World")
+    thing = "Hello World"
+    print(thing)
 
 if __name__ == '__main__':
     helloworld()
