@@ -5,7 +5,7 @@ import ipaddress
 '''A simple program that generates characters for D & D 5E.'''
 
 results = []
-
+sg.theme('DarkBlue4')
 pingstate = False
 
 def print_w(text, window):
@@ -42,10 +42,10 @@ def send_pings(window, addy):
 def main():
     global pings
     '''main point of execution method in python'''
+    #sg.theme_previewer()
     menu_def = [['File', 'Exit', ], ['Help', 'About...'], ]
     layout = [
-        [sg.Menu(menu_def)], 
-        [sg.Text(text="Simple Application to run ping.", font=('Arial Bold', 15), size=20, expand_x=True, justification='center')], 
+        [sg.Text(text="Simple Application to run ping.", font=('Arial Bold', 15), size=20, expand_x=True, justification='center', grab=True), sg.T(sg.SYMBOL_X, enable_events=True, k='Exit')], 
         [sg.InputText(expand_x=True),sg.Button("Ping")], 
         [sg.Multiline("", key='-IN-', expand_x=True, expand_y=True, size=(None, 20), background_color='black',
     text_color = 'lime',)]]
@@ -53,8 +53,8 @@ def main():
     
     addy = ""
     # Create the window
-    sg.theme('DarkAmber') 
-    window = sg.Window("Ping Application", layout)
+     
+    window = sg.Window("Ping Application", layout, no_titlebar=True)
 
     # Create an event loop
     while True:
@@ -72,6 +72,9 @@ def main():
         
         if event in (sg.WIN_CLOSED, 'Cancel', 'Exit'):
             break
+
+        if event == 'Min':
+            print('minimize')
 
         if event == 'About...':
             window.disappear()
