@@ -1,34 +1,38 @@
 '''Test module for element_printer_test'''
+import pytest
 from event_loop import event_loop
+from mocks.mock_sg import Sg
+from mocks.mock_window import Window
 
-def send_pings():
-    pass
+@pytest.fixture(name="get_sg")
+def fixture_sg():
+    '''Fixture to return the PySimpleGUI object'''
+    return Sg()
 
-class Sg():
-    def popup(self, title, version, sgVersionsLabel, sgVersions):
-        pass
-    
-class Window(dict):
-    def __setitem__(self, key, value):
-         key = key.upper()
-         super().__setitem__(key, value)
+@pytest.fixture(name="get_window")
+def fixture_window():
+    '''Fixture to return the PySimpleGUI Window'''
+    return Window()
 
-    def disappear(self):
-        pass
-
-    def reappear(self):
-        pass
-
-    def read(self):
-        return ("Exit", "")
-    
-    def close(self):
-        return True
-
-def test_event_loop():
+def test_event_loop_for_close(get_sg, get_window):
     '''Test for Event Loop'''
-    sg = Sg()
-    sg.WIN_CLOSED = 'WIN_CLOSED'
-    window = Window()
-    result = event_loop(sg, window, lambda x: None, lambda x: None)
-    assert result == True
+    s_g = get_sg
+    window = get_window
+    result = event_loop(s_g, window)
+    assert result is True
+
+def test_event_loop_for_ping(get_sg, get_window):
+    '''Test for Event Loop for a ping'''
+    s_g = get_sg
+    window = get_window
+    window.read = lambda : ("Ping", ['Test', ''])
+    result = event_loop(s_g, window)
+    assert result is True
+
+def test_event_loop_for_about(get_sg, get_window):
+    '''Test for Event Loop for a ping'''
+    s_g = get_sg
+    window = get_window
+    window.read = lambda : ("About...", ['Test', ''])
+    result = event_loop(s_g, window)
+    assert result is True
