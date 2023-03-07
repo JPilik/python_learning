@@ -1,10 +1,10 @@
 '''Function for pinging targets'''
-from pythonping import ping
 from element_printer import print_w, printerror_w
-import ipaddress
+from ipaddress import ip_address
+from pythonping import ping
 
-'''Sends pings results to a given element'''
 def send_pings(element, value):
+    '''Sends pings results to a given element'''
     try:
         ip = ipaddress.ip_address(str.strip(value))
         addy = str.strip(value)

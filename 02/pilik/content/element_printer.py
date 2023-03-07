@@ -3,11 +3,12 @@
 
 '''Prints a meessage to the element'''
 def print_w(result, element):
-    print_base(result, 'lime', element)
+    return print_base(result, 'lime', element)
 
 '''Prints an error message to the element'''
 def printerror_w(result, element):
-    print_base(result, 'red', element)
+    return print_base(result, 'red', element)
+
 
 def print_base(text, color, element):
     element.print(text, end = None,
@@ -21,4 +22,4 @@ def print_base(text, color, element):
         b = None,
         c = None,
         autoscroll = True)
-    
+    return True

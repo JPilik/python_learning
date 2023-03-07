@@ -2,7 +2,7 @@
 import PySimpleGUI as sg
 from time import sleep
 from event_loop import event_loop
-    
+
 def main():
     '''main point of execution method in python'''
     menu_def = [['File', 'Exit', ], ['Help', 'About...']]

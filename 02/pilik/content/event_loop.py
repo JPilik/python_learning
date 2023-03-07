@@ -1,7 +1,5 @@
 '''Code that represents the event loop of the gui'''
-
 from pings import send_pings
-
 
 def event_loop(sg, window):
     '''Event Loop of the pysimplegui application'''
@@ -11,7 +9,7 @@ def event_loop(sg, window):
         # End program if user closes window or
         # presses the OK button
         if event == 'Ping':
-            send_pings(window['-IN-'], values[1])
+            send_pings(window['-IN-'], values[1], ping)
         
         if event in (sg.WIN_CLOSED, 'Cancel', 'Exit'):
             break
@@ -20,4 +18,4 @@ def event_loop(sg, window):
             window.disappear()
             sg.popup('Pinger', 'Version 1.0', 'PySimpleGUI Version', sg.get_versions())
             window.reappear()
-    window.close()
+    return window.close()
