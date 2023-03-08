@@ -7,9 +7,11 @@ on the end that will pass the linting rules and a test that verifies it works.
 cd 01
 py -m venv ./venv
 ./venv/Scripts/Activate.ps1
-pip install -r requirements.txt
+pip install  --trusted-host pypi.org --trusted-host files.pythonhosted.org -r requirements.txt
 cd content
 ```
+
+## For assistance go to https://www.w3schools.com/python/default.asp
 
 Then attemp to make it all work the file should pass tests when pytest is ran and it should pass when pylint is ran against hellow world
 
