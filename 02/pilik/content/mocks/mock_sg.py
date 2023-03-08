@@ -1,11 +1,11 @@
-'''Mock Class that represents the PySimpleGUI framework'''
+'''Mock Class for PySimpleGUI framework'''
 from mocks.mock_window import Window
 
 class Sg():
-    '''Variable used as part of the mocking process for a closed windows'''
+    '''Mock Class for PySimpleGUI framework'''
+    
     WIN_CLOSED = 'WIND_CLOSED'
 
-    '''Mockup of a button in the PySimpleGUI framework'''
     def Button(self, button_text = "",
     button_type = 7,
     target = (None, None),
@@ -43,9 +43,9 @@ class Sg():
     expand_y = False,
     visible = True,
     metadata = None): 
+       '''Mockup of a Button'''
        return []
 
-    '''Mock of the input metthod from PySimpleGUI framework'''        
     def InputText(self, default_text = "",
     size = (None, None),
     s = (None, None),
@@ -76,10 +76,11 @@ class Sg():
     right_click_menu = None,
     visible = True,
     metadata = None):
+        '''Mockup of a Input'''        
         return []
     
-    '''mock implementation of the popup method'''
     def popup(self, title, version, sgVersionsLabel, sgVersions):
+        '''Mockup of a popup'''
         pass
 
 
@@ -97,9 +98,9 @@ class Sg():
     k = None,
     visible = True,
     metadata = None):
+        '''Mock of the Menu'''
         return []
     
-    '''Mockup of a text element in the PySimpleGUI framework'''
     def Text(self, text = "",
     size = (None, None),
     s = (None, None),
@@ -125,7 +126,6 @@ class Sg():
     metadata = None):
      return []
     
-    '''Mockup of a multiline element in the PySimpleGUI framework'''
     def Multiline(self, default_text = "",
     enter_submits = False,
     disabled = False,
@@ -172,9 +172,10 @@ class Sg():
     right_click_menu = None,
     visible = True,
     metadata = None):
+     '''Mock of the Menu'''
      return []
 
-    '''Mock of a Window in  in the PySimpleGUI framework'''
+    
     def Window(self, title,
     layout = None,
     default_element_size = None,
@@ -236,8 +237,9 @@ class Sg():
     sbar_frame_color = None,
     sbar_relief = None,
     metadata = None):
+     '''Mock of Window'''
      return Window()
     
-    '''Mock of get_versions()  in the PySimpleGUI framework'''
     def get_versions(self):
+       '''Mock of get_versions()'''
        return ''

@@ -4,7 +4,7 @@ import PySimpleGUI as sg
 from event_loop import event_loop
 
 def main():
-    '''main point of execution method in python'''
+    '''main'''
     menu_def = [['File', 'Exit', ], ['Help', 'About...']]
     layout = [
         [sg.Menu(menu_def)],

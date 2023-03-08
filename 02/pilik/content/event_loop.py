@@ -1,4 +1,4 @@
-'''Code that represents the event loop of the gui'''
+'''Event Loop'''
 from pings import send_pings
 
 def event_loop(s_g, window):

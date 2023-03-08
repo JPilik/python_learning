@@ -2,13 +2,14 @@
 from mocks.mock_element import Element
 
 class Window(dict):
-    '''Window class that extends the ditionary class'''
+    '''A mock for the window class within pysimplegui'''
     def __init__(self):
+        '''Class initializer'''
         self['-IN-'] = Element()
 
     
     def __setitem__(self, key, value):
-        '''class required due to inheriting froma dictionary as a base class'''
+        '''dictionary inheritance requirement'''
         key = key.upper()
         super().__setitem__(key, value)
 

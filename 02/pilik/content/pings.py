@@ -1,4 +1,4 @@
-'''Function for pinging targets'''
+'''pings'''
 from ipaddress import ip_address
 from pythonping import ping
 from element_printer import print_w, printerror_w

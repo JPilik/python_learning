@@ -1,7 +1,7 @@
 '''A Mock of an element in the pysimplegui framework'''
 
 class Element:
-    '''Element Class'''
+    '''A Mock of an element in the pysimplegui framework'''
 
     def print(self, args,
     end = None,
