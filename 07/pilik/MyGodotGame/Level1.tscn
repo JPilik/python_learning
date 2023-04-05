@@ -1,0 +1,103 @@
+[gd_scene load_steps=8 format=3 uid="uid://b26gqbovbyi6i"]
+
+[ext_resource type="Script" path="res://Player.gd" id="1_bypd0"]
+[ext_resource type="Texture2D" uid="uid://8ipreewyjync" path="res://character_0000.png" id="2_fs5vr"]
+[ext_resource type="PackedScene" uid="uid://dq2s67kx1qf84" path="res://coin.tscn" id="3_1srjo"]
+[ext_resource type="AudioStream" uid="uid://pdjhb87kykhf" path="res://01-footstep.ogg" id="3_ig8ru"]
+[ext_resource type="PackedScene" uid="uid://cmx40tllrxrsa" path="res://wall.tscn" id="4_yg2i5"]
+[ext_resource type="AudioStream" uid="uid://brxwom7rfowq7" path="res://Cyberpunk Moonlight Sonata.mp3" id="5_5mwa1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1bpp8"]
+size = Vector2(20, 23)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Player" type="CharacterBody2D" parent="."]
+script = ExtResource("1_bypd0")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+texture_filter = 1
+texture = ExtResource("2_fs5vr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_1bpp8")
+
+[node name="Audio" type="AudioStreamPlayer2D" parent="Player"]
+stream = ExtResource("3_ig8ru")
+max_distance = 2.0
+
+[node name="Coin" parent="." instance=ExtResource("3_1srjo")]
+
+[node name="Coin2" parent="." instance=ExtResource("3_1srjo")]
+position = Vector2(124, -20)
+
+[node name="Coin3" parent="." instance=ExtResource("3_1srjo")]
+position = Vector2(84, -67)
+
+[node name="Coin4" parent="." instance=ExtResource("3_1srjo")]
+position = Vector2(113, 67)
+
+[node name="Coin5" parent="." instance=ExtResource("3_1srjo")]
+position = Vector2(44, 53)
+
+[node name="Coin6" parent="." instance=ExtResource("3_1srjo")]
+position = Vector2(-47, 55)
+
+[node name="Coin7" parent="." instance=ExtResource("3_1srjo")]
+position = Vector2(-115, 54)
+
+[node name="Coin8" parent="." instance=ExtResource("3_1srjo")]
+position = Vector2(-135, 15)
+
+[node name="Coin9" parent="." instance=ExtResource("3_1srjo")]
+position = Vector2(37, -60)
+
+[node name="Coin10" parent="." instance=ExtResource("3_1srjo")]
+position = Vector2(-90, -56)
+
+[node name="Wall" parent="." instance=ExtResource("4_yg2i5")]
+position = Vector2(1, -92)
+scale = Vector2(10.52, 1)
+
+[node name="Wall2" parent="." instance=ExtResource("4_yg2i5")]
+position = Vector2(91, 2)
+
+[node name="Wall3" parent="." instance=ExtResource("4_yg2i5")]
+position = Vector2(-82, 2)
+
+[node name="Wall4" parent="." instance=ExtResource("4_yg2i5")]
+position = Vector2(180, -92)
+
+[node name="Wall5" parent="." instance=ExtResource("4_yg2i5")]
+position = Vector2(-177, -92)
+
+[node name="Wall6" parent="." instance=ExtResource("4_yg2i5")]
+position = Vector2(-177, 0)
+scale = Vector2(1, 4.76)
+
+[node name="Wall7" parent="." instance=ExtResource("4_yg2i5")]
+position = Vector2(180, 1)
+scale = Vector2(1, 4.83452)
+
+[node name="Wall8" parent="." instance=ExtResource("4_yg2i5")]
+position = Vector2(180, 91)
+
+[node name="Wall9" parent="." instance=ExtResource("4_yg2i5")]
+position = Vector2(1, 91)
+scale = Vector2(-10.28, 1)
+
+[node name="Wall19" parent="." instance=ExtResource("4_yg2i5")]
+position = Vector2(-177, 91)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(1, 0)
+offset = Vector2(-193, -108)
+anchor_mode = 0
+zoom = Vector2(3, 3)
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+
+[node name="backgroundmusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_5mwa1")
+volume_db = -12.0
