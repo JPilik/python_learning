@@ -5,7 +5,7 @@ on the end that will pass the linting rules and a test that verifies it works.
 # To prepare the repo for work run the following commands
 ```
 cd 01
-py -m venv ./venv
+py -m venv ./.venv
 ./venv/Scripts/Activate.ps1
 pip install  --trusted-host pypi.org --trusted-host files.pythonhosted.org -r requirements.txt
 cd content

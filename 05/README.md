@@ -8,7 +8,7 @@ execute the following in the base folder
 * cd {base_folder}
 * create a README.md file similar to this and add a description
 * py -m venv ./.venv
-* ./venv/Scripts/Activate.ps1
+* ./.venv/Scripts/Activate.ps1
 * pip install  --trusted-host pypi.org --trusted-host files.pythonhosted.org pytest
 * pip install  --trusted-host pypi.org --trusted-host files.pythonhosted.org pylint
 * any additional libraries you need to install
