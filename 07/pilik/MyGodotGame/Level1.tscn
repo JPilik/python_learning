@@ -1,14 +1,40 @@
-[gd_scene load_steps=8 format=3 uid="uid://b26gqbovbyi6i"]
+[gd_scene load_steps=11 format=3 uid="uid://b26gqbovbyi6i"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_bypd0"]
 [ext_resource type="Texture2D" uid="uid://8ipreewyjync" path="res://character_0000.png" id="2_fs5vr"]
 [ext_resource type="PackedScene" uid="uid://dq2s67kx1qf84" path="res://coin.tscn" id="3_1srjo"]
-[ext_resource type="AudioStream" uid="uid://pdjhb87kykhf" path="res://01-footstep.ogg" id="3_ig8ru"]
+[ext_resource type="AudioStream" uid="uid://ckqltas3581mm" path="res://01-footstep.ogg" id="3_ig8ru"]
 [ext_resource type="PackedScene" uid="uid://cmx40tllrxrsa" path="res://wall.tscn" id="4_yg2i5"]
-[ext_resource type="AudioStream" uid="uid://brxwom7rfowq7" path="res://Cyberpunk Moonlight Sonata.mp3" id="5_5mwa1"]
+[ext_resource type="AudioStream" uid="uid://dy58qwe5lmltv" path="res://Cyberpunk Moonlight Sonata.mp3" id="5_5mwa1"]
+[ext_resource type="Texture2D" uid="uid://dx6v01u8o8alu" path="res://Dragonheart.png" id="7_w2fuh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1bpp8"]
 size = Vector2(20, 23)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q8f3a"]
+texture = ExtResource("7_w2fuh")
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_itqrb"]
+sources/0 = SubResource("TileSetAtlasSource_q8f3a")
 
 [node name="Node2D" type="Node2D"]
 
@@ -23,9 +49,9 @@ texture = ExtResource("2_fs5vr")
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_1bpp8")
 
-[node name="Audio" type="AudioStreamPlayer2D" parent="Player"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Player"]
 stream = ExtResource("3_ig8ru")
-max_distance = 2.0
+autoplay = true
 
 [node name="Coin" parent="." instance=ExtResource("3_1srjo")]
 
@@ -101,3 +127,7 @@ drag_vertical_enabled = true
 [node name="backgroundmusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_5mwa1")
 volume_db = -12.0
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_itqrb")
+format = 2

@@ -14,4 +14,11 @@ func _process(delta):
 func _on_body_entered(body):
 	body.scale.x += 0.1
 	body.scale.y += 0.1
+	
+	$AudioStreamPlayer.stream = load("res://collectcoin-6075.mp3")
+	$AudioStreamPlayer.play()
+	self.visible = false
+	await $AudioStreamPlayer.finished
 	queue_free()
+	
+	
