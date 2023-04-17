@@ -6,6 +6,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_ow6f5"]
 
 [node name="Coin" type="Area2D"]
+z_index = 11
 position = Vector2(31, 0)
 script = ExtResource("1_nv633")
 
